@@ -8,6 +8,7 @@
 6. Initialize `mongodb`
     ```
     > docker exec -it mongodb bash
+    > mongo -u flaskuser -p
     > use revue
     > db.createUser({user: 'flaskuser', pwd: 'passwd123', roles: [{role: 'readWrite', db: 'revue'}]})
     ```
