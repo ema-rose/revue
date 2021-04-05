@@ -3,7 +3,11 @@ import createPersistedState from 'vuex-persistedstate'
 
 import UsersService from '@/services/UsersService'
 
-
+// GUIDE: The store contains data that will be available across the app
+// Values are reactive, so if a component reads a value which later changes,
+// the component will automatically receive the new value   
+// You cannot directly change the state of the store. instead you have to use a
+// commit function to do so.
 export default Vuex.createStore({
     plugins: [createPersistedState()],
 

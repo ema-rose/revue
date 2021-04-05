@@ -5,6 +5,11 @@ from functools import wraps
 from app import app
 
 
+# GUIDE: This function ensures that a url endpoint is authenticated
+# This is actually defining a function decorator!
+# https://flask.palletsprojects.com/en/1.1.x/patterns/viewdecorators/
+# the decorator checks to see if there is a valid jwt token
+# https://jwt.io
 def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):

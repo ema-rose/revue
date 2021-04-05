@@ -9,7 +9,10 @@ from app import app
 
 MAIL_REGEX = r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
 
-
+# GUIDE: requests to api endpoints, such as /api/signup are dealt with by individual functions
+# The route function wrapper here has an argument, methods=["POST"]. This tells Flask that this function
+# will only respond to POST requests. POST requests are used to send data to the server.
+# https://www.w3schools.com/tags/ref_httpmethods.asp
 @app.route("/api/signup", methods=["POST"])
 def sign_up():
     schema = Schema({

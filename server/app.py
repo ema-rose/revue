@@ -1,3 +1,6 @@
+"""
+GUIDE: This defines the entry point to the flask app.
+"""
 import config
 import os
 
@@ -5,8 +8,6 @@ from datetime import date
 from flask import Flask, jsonify, send_from_directory
 from flask.json import JSONEncoder
 from flask_cors import CORS
-#TODO: Check if CORS is properly set in vue
-
 
 class CustomJSONEncoder(JSONEncoder):
     """Use ISO 8601 for dates"""
@@ -26,9 +27,17 @@ class CustomJSONEncoder(JSONEncoder):
 app = Flask(__name__)
 app.json_encoder = CustomJSONEncoder
 app.config["SECRET_KEY"] = config.flask_secret_key
+# GUIDE: Cross-Origin Resource Sharing is a mechanism used by servers to tell the browser which other servers the browser should trust for this site.
+# https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 CORS(app)
 
 
+# GUIDE: This is how we tell flask to respond to a request on a specific url
+# This particular instance responds to /api/file/filename. The last segment, filename, is turned into a string and passed as an argument to the function
+# The @ syntax is called a function decorator. @app.route() is a function that takes another function as an argument and returns a modified function
+# This is an advanced python feature that can be a lot of fun to waste time with.
+# Flask makes great use of function decorators to attach functions to server responses/behaviors
+# https://flask.palletsprojects.com/en/1.1.x/api/#flask.Flask.route
 @app.route("/api/file/<string:filename>")
 def images_get(filename):
     return send_from_directory(config.image_upload_folder, filename)
@@ -42,6 +51,7 @@ from views.users import *  # noqa
 import errors  # noqa
 
 
+# GUIDE: here are functions to respond to various server errors. Note the use of decorators.
 @app.errorhandler(404)
 def page_not_found(e):
     return jsonify({
