@@ -1,3 +1,5 @@
+<!--GUIDE: here is a reusable component. 
+This component could theoretically be added to and initialized in any vue app as long as it was passed the three props it requires -->
 <template lang="html">
   <div class="comment">
     <h4>by <a href="">{{ user.username }}</a> on {{ created }}</h4>

@@ -7,12 +7,17 @@ from mongoengine import (
     EmbeddedDocumentField, CASCADE
 )
 
+# GUIDE: Here we are connecting to the mongodb database. os.environ.get is getting environment variables
+# if they are not set, the values are None which leads us to login to the default database.
 username = os.environ.get('MONGODB_USERNAME')
 password = os.environ.get('MONGODB_PASSWORD')
 host = os.environ.get('MONGODB_HOSTNAME')
 db = os.environ.get('MONGODB_DATABASE', "revue")
 connect(username=username, password=password, host=host, db=db)
 
+# GUIDE: These are models for our database entries. They extend mongoengine.Document. 
+# This allows us to unwrap database queries directly into objects for convenience
+# http://docs.mongoengine.org/apireference.html#documents
 class User(Document):
     email = EmailField(required=True, unique=True)
     username = StringField(max_length=50, required=True, unique=True)

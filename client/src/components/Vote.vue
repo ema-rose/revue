@@ -1,3 +1,4 @@
+<!--GUIDE: This component is a little more tricky. It has functions which call the Api. -->
 <template lang="html">
   <div class="vote">
     <svg @click="upVote" :class="{ active: votedUp }" fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
