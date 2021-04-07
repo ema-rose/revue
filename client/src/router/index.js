@@ -24,6 +24,13 @@ const routes = [
     name: 'Subvue',
     component: () => import(/* webpackChunkName: "subvue" */ '@/views/Subvue')
   },
+
+  {
+    path: '/what3words',
+    name: 'what3words',
+    component: () => import(/* webpackChunkName: "what3words" */ '@/views/what3words')
+  },
+
   {
     path: '/s/:subvuePermalink/:id',
     name: 'Post',

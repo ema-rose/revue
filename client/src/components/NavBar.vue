@@ -13,6 +13,13 @@
       </div>
     </div>
 
+    <div class="dropdown">
+      <button class="dropbtn">Team Couriers</button>
+      <div class="dropdown-content">
+        <router-link class="create-subvue" :to="{ name: 'what3words' }">What 3 Words</router-link>
+      </div>
+    </div>
+
     <router-link v-if="!$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'SignUp', params: {} }">Sign Up</router-link>
     <router-link v-if="!$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'Login', params: {} }">Login</router-link>
 
