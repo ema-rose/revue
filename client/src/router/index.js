@@ -6,7 +6,7 @@ import couriers from '@/views/couriers'
 const routes = [
   {
     path: '/',
-    name: 'couriers',
+    name: 'home',
     component: couriers,
   },
   {

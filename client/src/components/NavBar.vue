@@ -47,14 +47,14 @@ export default {
 <style scoped lang="css">
 nav {
   overflow: hidden;
-  background-color: rgb(21, 184, 62);
+  background-color: rgb(175, 234, 220);
   font-family: Arial;
 }
 
 nav a {
   float: left;
   font-size: 16px;
-  color: rgb(255, 255, 255);
+  color: rgb(4, 30, 66);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -66,11 +66,11 @@ nav a {
 
 .create-subvue {
   background-color: rgb(23, 92, 93);
-  color: white !important;
+  color: rgb(4, 30, 66);
 }
 
 .create-subvue:hover {
-  background-color: rgb(7, 44, 45) !important;
+  background-color: rgb(7, 44, 45)
 }
 
 .dropdown {
@@ -82,7 +82,7 @@ nav a {
   font-size: 16px;
   border: none;
   outline: none;
-  color: white;
+  color: rgb(4, 30, 66);
   padding: 14px 16px;
   background-color: inherit;
   font: inherit;
