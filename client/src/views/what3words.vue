@@ -1,12 +1,40 @@
 <template lang="html">
   <div class="create-post container">
     <h1>What 3 Words</h1>
-    <p>More content coming soon!</p>
+    <Map></Map>
   </div>
 </template>
 
 <script>
+  import Map from '@/components/Map'
+  export default {
+    name: 'subvue',
 
+    components: { Map },
+
+    data() {
+        return {
+            permalink: this.$route.params.name,
+            posts: [],
+            subvue: null
+        }
+    },
+
+    mounted() {
+        
+    },
+
+    methods: {
+
+    },
+
+    watch: {
+        $route() {
+            this.permalink = this.$route.params.name
+            this.fetchData()
+        }
+    }
+}
 </script>
 
 <style scoped lang="css">
