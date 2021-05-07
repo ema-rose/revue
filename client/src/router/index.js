@@ -6,8 +6,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 const routes = [
   {
     path: '/',
-    name: 'what3words',
-    component: () => import(/* webpackChunkName: "what3words" */ '@/views/what3words')
+    name: 'couriers',
+    component: () => import(/* webpackChunkName: "couriers" */ '@/views/couriers')
   },
   {
     path: '/login',
@@ -26,9 +26,9 @@ const routes = [
   },
 
   {
-    path: '/what3words',
-    name: 'what3words',
-    component: () => import(/* webpackChunkName: "what3words" */ '@/views/what3words')
+    path: '/couriers',
+    name: 'couriers',
+    component: () => import(/* webpackChunkName: "couriers" */ '@/views/couriers')
   },
 
   {
