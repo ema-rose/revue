@@ -6,8 +6,8 @@ import Home from '@/views/Home'
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'what3words',
+    component: () => import(/* webpackChunkName: "what3words" */ '@/views/what3words')
   },
   {
     path: '/login',

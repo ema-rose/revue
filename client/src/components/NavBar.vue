@@ -47,14 +47,14 @@ export default {
 <style scoped lang="css">
 nav {
   overflow: hidden;
-  background-color: rgb(115, 243, 147);
+  background-color: rgb(21, 184, 62);
   font-family: Arial;
 }
 
 nav a {
   float: left;
   font-size: 16px;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
