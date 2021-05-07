@@ -6,7 +6,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 const routes = [
   {
     path: '/',
-    name: 'couriers',
+    name: 'home',
     component: () => import(/* webpackChunkName: "couriers" */ '@/views/couriers')
   },
   {

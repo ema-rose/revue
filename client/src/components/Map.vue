@@ -1,5 +1,13 @@
 <template>
   <div id="map" />
+  <div id="list">
+    <p>Points</p>
+    <ul>
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -27,6 +35,16 @@ export default {
 
 <style>
 #map {
-  height: 100vh;
+  height: 600px;
+  width: 80%;
+  float: left;
+}
+
+#list {
+  height: 600px;
+  width: 18%;
+  float: right;
+  padding: 10px;
+  border: 3px solid #aaaaaa;
 }
 </style>
