@@ -1,26 +1,28 @@
 <template lang="html">
   <nav>
-    <router-link class="title" :to="{ name: 'Home', params: {} }">ReVue</router-link>
+    <router-link class="title" :to="{ name: 'what3words', params: {} }">Map</router-link>
     <div class="dropdown">
-      <button class="dropbtn">Subvues</button>
+      <button class="dropbtn">Tours</button>
       <div class="dropdown-content">
         <router-link
           v-for="subvue in $store.state.subscribedSubvues"
           :key="subvue.permalink"
           :to="{ name: 'Subvue', params: {name: subvue.permalink} }"
           >{{ subvue.name }}</router-link>
-        <router-link class="create-subvue" :to="{ name: 'CreateSubvue' }">Create a Subvue</router-link>
+        <router-link class="create-subvue" :to="{ name: 'CreateSubvue' }">List</router-link>
+        <router-link class="create-subvue" :to="{ name: 'CreateSubvue' }">Import</router-link>
       </div>
     </div>
 
     <div class="dropdown">
-      <button class="dropbtn">Team Couriers</button>
+      <button class="dropbtn">About</button>
       <div class="dropdown-content">
-        <router-link class="create-subvue" :to="{ name: 'what3words' }">What 3 Words</router-link>
+        <router-link class="create-subvue" :to="{ name: 'what3words' }">How To Use</router-link>
+        <router-link class="create-subvue" :to="{ name: 'what3words' }">Team Couriers</router-link>
       </div>
     </div>
 
-    <router-link v-if="!$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'SignUp', params: {} }">Sign Up</router-link>
+    <router-link v-if="!$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'SignUp', params: {} }">Options</router-link>
     <router-link v-if="!$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'Login', params: {} }">Login</router-link>
 
     <a v-if="$store.state.isUserLoggedIn" style="float:right" @click="logout()">Logout</a>
@@ -45,14 +47,14 @@ export default {
 <style scoped lang="css">
 nav {
   overflow: hidden;
-  background-color: #333;
+  background-color: rgb(115, 243, 147);
   font-family: Arial;
 }
 
 nav a {
   float: left;
   font-size: 16px;
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
