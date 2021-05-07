@@ -1,6 +1,6 @@
 <template lang="html">
   <nav>
-    <router-link class="title" :to="{ name: 'what3words', params: {} }">Map</router-link>
+    <router-link class="title" :to="{ name: 'couriers', params: {} }">Map</router-link>
     <div class="dropdown">
       <button class="dropbtn">Tours</button>
       <div class="dropdown-content">
@@ -17,8 +17,8 @@
     <div class="dropdown">
       <button class="dropbtn">About</button>
       <div class="dropdown-content">
-        <router-link class="create-subvue" :to="{ name: 'what3words' }">How To Use</router-link>
-        <router-link class="create-subvue" :to="{ name: 'what3words' }">Team Couriers</router-link>
+        <router-link class="create-subvue" :to="{ name: 'couriers' }">How To Use</router-link>
+        <router-link class="create-subvue" :to="{ name: 'couriers' }">Team Couriers</router-link>
       </div>
     </div>
 
