@@ -16,8 +16,6 @@ export default {
         style: "mapbox://styles/mapbox/light-v9",
       });
       map.on('load', () => {
-      // TODO: Here we want to load a layer
-      // TODO: Here we want to load/setup the popup
       });
     });
     return {};
