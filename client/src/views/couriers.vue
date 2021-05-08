@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="create-post container">
-    <h1>What 3 Words</h1>
+    <h1>Team Couriers</h1>
     <Map></Map>
   </div>
 </template>
