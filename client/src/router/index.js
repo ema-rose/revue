@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-//import Home from '@/views/Home'
+import couriers from '@/views/couriers'
 
 // GUIDE: This file defines urls for the frontend
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: () => import(/* webpackChunkName: "couriers" */ '@/views/couriers')
+    name: 'couriers',
+    component: couriers,
   },
   {
     path: '/login',
