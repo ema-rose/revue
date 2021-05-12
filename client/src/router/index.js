@@ -6,8 +6,8 @@ import couriers from '@/views/couriers'
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: () => import(/* webpackChunkName: "couriers" */ '@/views/couriers')
+    name: 'couriers',
+    component: couriers,
   },
   {
     path: '/login',
