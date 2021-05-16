@@ -9,8 +9,8 @@
           :key="subvue.permalink"
           :to="{ name: 'Subvue', params: {name: subvue.permalink} }"
           >{{ subvue.name }}</router-link>
-        <router-link class="create-subvue" :to="{ name: 'CreateSubvue' }">List</router-link>
-        <router-link class="create-subvue" :to="{ name: 'CreateSubvue' }">Import</router-link>
+        <router-link class="create-subvue" :to="{ name: 'Home' }">List</router-link>
+        <router-link class="create-subvue" :to="{ name: 'SignUp' }">Import</router-link>
       </div>
     </div>
 
@@ -18,15 +18,13 @@
       <button class="dropbtn">About</button>
       <div class="dropdown-content">
         <router-link class="create-subvue" :to="{ name: 'couriers' }">How To Use</router-link>
-        <router-link class="create-subvue" :to="{ name: 'couriers' }">Team Couriers</router-link>
+        <router-link class="create-subvue" :to="{ name: 'Credits' }">Team Couriers</router-link>
       </div>
     </div>
+    
 
-    <router-link v-if="!$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'SignUp', params: {} }">Options</router-link>
-    <router-link v-if="!$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'Login', params: {} }">Login</router-link>
-
-    <a v-if="$store.state.isUserLoggedIn" style="float:right" @click="logout()">Logout</a>
-    <router-link v-if="$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'User', params: { username: $store.state.user.username } }">{{ $store.state.user.username }}</router-link>
+    <router-link style="float:right" :to="{ name: 'CreatePost', params: {} }">Add Point</router-link>
+    <router-link style="float:right" :to="{ name: 'CreateSubVue', params: {} }">Make Tour</router-link>
   </nav>
 </template>
 
