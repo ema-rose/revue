@@ -24,7 +24,10 @@ services:
       - frontend
       - backend
   mongodb:
-    image: mongo:4.0.8
+    build:
+      context: mongo
+      dockerfile: Dockerfile
+    image: knox.edu/mongo
     container_name: mongodb
     restart: unless-stopped
     command: mongod -v --auth
@@ -39,10 +42,9 @@ services:
       - mongodbdata:/data/db
     networks:
       - backend
+    ports:
+      - "27017:27017"
   webserver:
-    build:
-      context: nginx
-      dockerfile: Dockerfile
     image: knox.edu/webserver:latest
     container_name: webserver
     restart: unless-stopped
