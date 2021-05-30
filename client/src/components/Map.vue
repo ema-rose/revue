@@ -166,11 +166,13 @@ export default {
   };
 
 
+  var points = [];
   // add markers to map
   geojson.features.forEach(function(marker) {
     // create a HTML element for each feature
     var el = document.createElement('div');
     el.className = 'marker';
+    this.points = document.getElementsByTagName('marker').value;
 
     // make a marker for each feature and add to the map
     new mapboxgl.Marker(el)
@@ -181,21 +183,23 @@ export default {
     }); 
   },
   
+
   data() {
     return {
       points: []  
     }
-  },
-  methods: {
+  }
+
+  /* methods: {
     addPoints() {
       /* for (x = 0; x < document.getElementsByTagName('marker').length; x++) {
         this.points = document.getElementsByTagName('marker').item(x).value;
       } */
-    }
-  },
-  created(){
-    this.addPoints();
-  }
+    //}
+  //},
+  //created(){
+   // this.addPoints();
+  //} 
 }
 
 </script>
