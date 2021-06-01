@@ -7,11 +7,17 @@
       <li>Two</li>
       <li>Three</li>
     </ul>
-    <ul>
-      <li v-for='point in point' v-bind:key='point'>
+    <ul id="point">
+      <!-- <li v-for="value in object" v-bind:"point">
+        {{ value }}
+      </li> -->
+    </ul>
+
+    <!-- <ul>
+      <li v-for='point in points' v-bind:key='point'>
         {{ points.point }}
       </li>
-    </ul>
+    </ul> -->
   </div>
 
 </template>
@@ -166,13 +172,13 @@ export default {
   };
 
 
-  var points = [];
+  // var points = [];
   // add markers to map
   geojson.features.forEach(function(marker) {
     // create a HTML element for each feature
     var el = document.createElement('div');
     el.className = 'marker';
-    this.points = document.getElementsByTagName('marker').value;
+    // this.points = document.getElementsByTagName('marker').value;
 
     // make a marker for each feature and add to the map
     new mapboxgl.Marker(el)
@@ -184,11 +190,11 @@ export default {
   },
   
 
-  data() {
+  /* data() {
     return {
-      points: []  
+      points
     }
-  }
+  } */
 
   /* methods: {
     addPoints() {
